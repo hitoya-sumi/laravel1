@@ -5,14 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Person extends Model
+class Board extends Model
 {
     protected $guarded = array('id');
     public static $rules = array(
-        'name' => 'required',
-        'age' => 'integer|min:0|max:150',
+        'person_id' => 'required',
+        'title' => 'required',
+        'message' => 'required',
     );
     public function getData(){
-        return $this->id . ':' . $this->name. '(' . $this->age . ')';
+        return $this->id . ':' . $this->title;
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.hello')
 <style>
-  th {
+   th {
       background-color: black;
       color: white;
       padding: 5px 30px;
@@ -16,7 +16,7 @@
       color: white;
     }
 </style>
-@section('title', 'edit.blade.php')
+@section('title', 'board.add.blade.php')
 
 
 @section('content')
@@ -29,25 +29,20 @@
   @endforeach
 </ul>
 @endif
-<form action="/edit" method="post">
+<form action="/board/add" method="post">
   <table>
     @csrf
-    <input type="hidden" name="id" value="{{ $form->id }}">
     <tr>
-      <th>
-        name
-      </th>
-      <td>
-        <input type="text" name="name" value="{{ $form->name }}">
-      </td>
+      <th>person_id:</th>
+      <td><input type="number" name="person_id"></td>
     </tr>
     <tr>
-      <th>
-        age
-      </th>
-      <td>
-        <input type="text" name="age" value="{{ $form->age }}">
-      </td>
+      <th>title:</th>
+      <td><input type="text" name="title"></td>
+    </tr>
+    <tr>
+      <th>message:</th>
+      <td><input type="text" name="message"></td>
     </tr>
   </table>
   <button>送信</button>

@@ -14,5 +14,4 @@ use App\Http\Controllers\TodosController;
 */
 
 Route::get('/',[TodosController::class, 'index']);
-Route::resource('todos','TodosController');
 
